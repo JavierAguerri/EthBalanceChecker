@@ -1,0 +1,11 @@
+{
+  "threshold": 10000000000000000,
+  "rpcUrl": "https://sepolia.infura.io/v3/6a7af2a52be9438ebd44b5289d7afd54",
+  "ethAddress": "0x5E565C0C7Fc690A03CaB3879cB948068E3e28056",
+  "email": {
+    "smtpServer": "smtp.gmail.com",
+    "smtpPort": 587,
+    "emailAddress": "ethtestnotifications@gmail.com",
+    "recipientEmail": "fflgnjtyitxxyysyzdmw@protonmail.com"
+  }
+}

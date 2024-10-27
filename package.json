@@ -1,0 +1,38 @@
+{
+  "name": "20241026_ethbalancechecker",
+  "version": "1.0.0",
+  "description": "<p>Write an automation health check script that fetches the balance of an ETH address from an Infura RPC and if the balance is below 0.1 ether it should send a notification either via email. The script should run periodically to check the balance.</p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js",
+    "start:sepolia": "cross-env NODE_ENV=sepolia npm run start",
+    "lint": "eslint 'src/**/*.{ts,js}'",
+    "format": "prettier --write 'src/**/*.{ts,js}'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "config": "^3.3.12",
+    "dotenv": "^16.4.5",
+    "nodemailer": "^6.9.15",
+    "winston": "^3.15.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/config": "^3.3.5",
+    "@types/jest": "^29.5.14",
+    "@types/nodemailer": "^6.4.16",
+    "@typescript-eslint/eslint-plugin": "^8.11.0",
+    "@typescript-eslint/parser": "^8.11.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.13.0",
+    "globals": "^15.11.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript-eslint": "^8.11.0"
+  }
+}

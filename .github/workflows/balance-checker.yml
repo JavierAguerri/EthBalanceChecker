@@ -1,0 +1,39 @@
+name: Ethereum Balance Checker
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every 20 minutes
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  check-balance:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [sepolia]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Build TypeScript
+        run: npm run build
+
+      - name: Run Tests
+        run: npm test
+
+      - name: Run Balance Checker (Sepolia Network)
+        env:
+          EMAIL_PASSWORD: ${{ secrets['EMAIL_PASSWORD_SEPOLIA'] }}
+        run: npm run start:sepolia
